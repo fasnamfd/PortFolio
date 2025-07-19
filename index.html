@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fasna C - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".text-1").hide().fadeIn(1000);
+      $(".text-2").hide().delay(500).fadeIn(1000);
+      $(".text-3").hide().delay(1000).fadeIn(1000);
+      $(".text-4").hide().delay(1500).fadeIn(1000);
+
+      const roles = ["Full-stack Developer", "Creative Coder", "UI/UX Enthusiast" , 'ML Enthusiast' ];
+      let i = 0, j = 0;
+      let current = "";
+      let isDeleting = false;
+
+      function type() {
+        current = roles[i];
+        let visibleText = current.substring(0, j);
+        $(".typing").text(visibleText);
+
+        if (!isDeleting && j < current.length) {
+          j++;
+          setTimeout(type, 100);
+        } else if (isDeleting && j > 0) {
+          j--;
+          setTimeout(type, 60);
+        } else {
+          isDeleting = !isDeleting;
+          if (!isDeleting) i = (i + 1) % roles.length;
+          setTimeout(type, 1000);
+        }
+      }
+
+      type();
+    });
+    function showTab(tabId) {
+  const tabs = ['projectTab', 'docTab'];
+
+  tabs.forEach(id => {
+    const el = document.getElementById(id);
+    el.style.display = (id === tabId) ? 'flex' : 'none';
+  });
+
+  const buttons = document.querySelectorAll('.tab-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+
+  if (tabId === 'projectTab') {
+    buttons[0].classList.add('active');
+  } else {
+    buttons[1].classList.add('active');
+  }
+}
+
+  </script>
+</head>
+
+<body>
+  <div class="scroll-up-btn">
+    <i class="fas fa-angle-up"></i>
+  </div>
+
+  <nav class="navbar">
+    <div class="blur-overlay" id="blur"></div>
+
+    <div class="max-width">
+      <div class="logo"><a href="#">Portf<span>olio</span></a></div>
+      <ul class="menu">
+        <li><a href="#home" class="menu-btn">Home</a></li>
+        <li><a href="#about" class="menu-btn">About</a></li>
+        <li><a href="#skills" class="menu-btn">Skills</a></li>
+        <li><a href="#experiences" class="menu-btn">Experience</a></li>
+        <li><a href="#projects" class="menu-btn">projects</a></li>
+
+      </ul>
+      <div class="menu-toggle menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <section class="home" id="home">
+    <div class="max-width">
+      <div class="home-content">
+        <div class="text-1">Hello, I am</div>
+        <div class="text-2">Fasna C</div>
+        <div class="text-3"><i>Java Full Stack Developer & Hardware Enthusiast</i></div>
+        <div class="text-4">I am a <span class="typing"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="max-width">
+      <h2 class="title">About Me</h2>
+      <div class="about-content">
+        <div class="column left">
+          <img src="images/WhatsApp Image 2025-07-18 at 20.30.10_27d1cd99.jpg" alt="Profile Photo">
+        </div>
+        <div class="column right">
+          <div class="text">I'm Fasna <span class="typing-2"></span></div>
+          <p>I'm a Java Full Stack Developer Trainee at Quest Innovation Solutions, and I am a 2024 B.Tech graduate in Electronics and Communication Engineering from Government Engineering College Idukki. I’m passionate about full-stack development, IoT, and Edge ML. I enjoy solving real-world problems with a creative and hands-on approach to technology.</p>
+          <a href="Fasna java Developer.pdf" download>Download Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="skill-section" id="skills">
+  <h1 class="heading">Technologies I Work With in Web Development</h1>
+  <div class="skills-text-list">
+    <ul class="skill-text-items">
+      <li><span class="highlight">Java</span> – Core programming language for backend systems</li>
+      <li><span class="highlight">Spring Boot</span> – Creating REST APIs and managing backend logic</li>
+      <li><span class="highlight">MySQL</span> – Database management and querying</li>
+      <li><span class="highlight">HTML</span> – Structuring webpages</li>
+      <li><span class="highlight">CSS</span> – Styling and responsive layout design</li>
+      <li><span class="highlight">JavaScript</span> – Adding interactivity and dynamic behavior to web pages</li>
+      <li><span class="highlight">Angular</span> – Building modern single-page applications</li>
+    </ul>
+  </div>
+ <h1 class="heading">Technologies I Work With in Hardware</h1>
+<div class="skills-text-list">
+  <ul class="skill-text-items">
+    <li><span class="highlight">IoT</span> – Developing smart systems using sensors, actuators, and connected microcontrollers</li>
+    <li><span class="highlight">TinyML</span> – Deploying machine learning models on low-power embedded devices</li>
+    <li><span class="highlight">LTspice</span> – Simulating and analyzing electronic circuits</li>
+    <li><span class="highlight">MATLAB</span> – Modeling, analyzing signals, and simulating control systems</li>
+    <li><span class="highlight">LoRa</span> – Enabling long-range wireless communication for IoT networks</li>
+  </ul>
+</div>
+</section>
+
+  <section class="experience" id="experiences">
+    <h2 class="title">Experience</h2>
+    <div class="experience-container">
+      <div class="experience-card">
+        <div class="company-logo">
+          <img src="images/quest_innovative_solutions_logo.jpg" alt="Quest Logo">
+        </div>
+        <div class="experience-details">
+          <h3>Quest Innovation Solutions</h3>
+          <p class="job-title">Java Full Stack Developer Trainee</p>
+          <p class="job-date">September 2024 – Present</p>
+          <ul class="job-description">
+            <li>Training in Java, Spring Boot, MySQL, Angular.</li>
+            <li>Building full-stack applications with hands-on projects.</li>
+            <li>Developing object-oriented programming and backend skills.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="project-section" id="projects">
+  <h1 class="heading">My Work</h1>
+
+  <div class="tab-buttons">
+    <button class="tab-btn active" onclick="showTab('projectTab')">Projects</button>
+    <button class="tab-btn" onclick="showTab('docTab')">Documentations</button>
+  </div>
+
+  <!-- Projects Tab -->
+  <div class="tab-content" id="projectTab">
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="images/imgofproject-removebg-preview.png" alt="Asset Tracking" class="project-img">
+        <h3 class="project-title">Asset Tracking & Monitoring</h3>
+        <p>Used LoRa, IoT, and Edge ML (TinyML) to monitor asset location and motion in real-time to prevent theft.</p>
+      </div>
+      <div class="project-card">
+        <img src="images/WhatsApp Image 2025-07-18 at 21.15.07_2c73c2d6.jpg" alt="Third Eye Glove" class="project-img">
+        <h3 class="project-title">Third Eye for Blind - Ultrasonic Glove</h3>
+        <p>Designed an assistive glove for visually impaired using Arduino Nano, ultrasonic sensors, buzzer, and vibration motor.</p>
+      </div>
+      <div class="project-card">
+        <h3 class="project-title">Currency Converter API Integration</h3>
+        <p>Built a Spring Boot application that integrates with a public API to provide real-time currency conversion.</p>
+      </div>
+      <div class="project-card">
+        <h3 class="project-title">AWT Swing Calculator</h3>
+        <p>Developed a desktop calculator using Java AWT and Swing components with responsive layout and operations.</p>
+      </div>
+      <div class="project-card">
+        <h3 class="project-title">Portfolio</h3>
+        <p>Developed a personal portfolio website using HTML, CSS, and JavaScript. Currently exploring Angular to enhance it further.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Documentation Tab -->
+  <div class="tab-content" id="docTab" style="display: none;">
+    <div class="skills-text-list">
+      <ul class="documentation-text-items">
+        <li>
+          <a href="https://www.hackster.io/42057/indoor-monitoring-system-using-wioterminal-and-node-red-7a4a1b" target="_blank">
+            <span class="highlight">Indoor Monitoring System Using WioTerminal and Node-RED</span>
+          </a>
+          <p>Step-by-step guide on visualizing data in Node-RED dashboards using MQTT and Mosquitto broker.</p>
+          <img src="images/2025-07-19_00-53.png" alt="Documentation Image 1">
+        </li>
+
+        <li>
+          <a href="https://www.hackster.io/509388/explore-with-xiao-esp32s3-sense-4e2a83" target="_blank">
+            <span class="highlight">Explore with XIAO ESP32S3 SENSE</span>
+          </a>
+          <p>Beginner-friendly guide to Xiao ESP32S3 Sense, from setup to implementation.</p>
+          <img src="images/2025-07-19_01-03.png" alt="Documentation Image 2">
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+  <footer id="footer">
+    <div class="container-fluid">
+      <div class="social-icons mt-4">
+        <p>Contact me</p>
+        <a href="https://twitter.com/fasnamfd" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://github.com/fasnamfd" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/fasnamfd" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:fasnayousaf2020@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="nav.js"></script>
+<script src="https://kit.fontawesome.com/281ef77036.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
