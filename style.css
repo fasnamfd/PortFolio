@@ -511,7 +511,7 @@ section .title::after{
 .achievements-items{
   display: flex;
   flex-wrap: wrap;
-  background: #baadad;
+  background: #d6d3d3;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   padding: 20px;
