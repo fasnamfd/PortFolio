@@ -9,57 +9,6 @@
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $(".text-1").hide().fadeIn(1000);
-      $(".text-2").hide().delay(500).fadeIn(1000);
-      $(".text-3").hide().delay(1000).fadeIn(1000);
-      $(".text-4").hide().delay(1500).fadeIn(1000);
-
-      const roles = ["Full-stack Developer", "Creative Coder", "UI/UX Enthusiast" , 'ML Enthusiast' ];
-      let i = 0, j = 0;
-      let current = "";
-      let isDeleting = false;
-
-      function type() {
-        current = roles[i];
-        let visibleText = current.substring(0, j);
-        $(".typing").text(visibleText);
-
-        if (!isDeleting && j < current.length) {
-          j++;
-          setTimeout(type, 100);
-        } else if (isDeleting && j > 0) {
-          j--;
-          setTimeout(type, 60);
-        } else {
-          isDeleting = !isDeleting;
-          if (!isDeleting) i = (i + 1) % roles.length;
-          setTimeout(type, 1000);
-        }
-      }
-
-      type();
-    });
-    function showTab(tabId) {
-  const tabs = ['projectTab', 'docTab'];
-
-  tabs.forEach(id => {
-    const el = document.getElementById(id);
-    el.style.display = (id === tabId) ? 'flex' : 'none';
-  });
-
-  const buttons = document.querySelectorAll('.tab-btn');
-  buttons.forEach(btn => btn.classList.remove('active'));
-
-  if (tabId === 'projectTab') {
-    buttons[0].classList.add('active');
-  } else {
-    buttons[1].classList.add('active');
-  }
-}
-
-  </script>
 </head>
 
 <body>
@@ -78,6 +27,7 @@
         <li><a href="#skills" class="menu-btn">Skills</a></li>
         <li><a href="#experiences" class="menu-btn">Experience</a></li>
         <li><a href="#projects" class="menu-btn">projects</a></li>
+        <li><a href="#Achievements" class="menu-btn">#Achievements</a></li>
 
       </ul>
       <div class="menu-toggle menu-btn">
@@ -107,7 +57,7 @@
         <div class="column right">
           <div class="text">I'm Fasna <span class="typing-2"></span></div>
           <p>I'm a Java Full Stack Developer Trainee at Quest Innovation Solutions, and I am a 2024 B.Tech graduate in Electronics and Communication Engineering from Government Engineering College Idukki. I’m passionate about full-stack development, IoT, and Edge ML. I enjoy solving real-world problems with a creative and hands-on approach to technology.</p>
-          <a href="Fasna java Developer.pdf" download>Download Resume</a>
+          <a href="Fasna_C_Resume (1).pdf" download>Download Resume</a>
         </div>
       </div>
     </div>
@@ -215,6 +165,18 @@
         </li>
       </ul>
     </div>
+  </div>
+</section>
+<section class="Achievements" id="achievements">
+  <div class="max-width"></div>
+  <h2 class="title">Achievements</h2>
+  <div class="achievements-container">
+    <ul class="achievements-items">
+      <li>First prize in GTA CODESTORM (36-hour hackathon) Conducted by Gtech Mulearn (In hardware Domain)</li>
+      <li>First prize Technical Quiz Conducted by T works</li>
+      <li>First Prize in Robotic ideation contest Conducted by IEEE SB MACE</li>
+      <li>Second Prize in Technical Article writing conducted by IEEE PES GECI</li>
+    </ul>
   </div>
 </section>
 

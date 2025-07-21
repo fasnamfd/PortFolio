@@ -290,25 +290,25 @@ section .title::after{
     background: none;
 }
 /*btn*/
-.btn{
+/* .btn{
     border:none;
     padding: 2px 36px;
     margin: 0 800px;
     font-weight: bold;
     margin-top: 80px;
     margin-left: 400px;
-    background-color: red;
-    color: rgb(1, 1, 1);
-    background-color: red;
+    background-color: rgb(18, 19, 26);
+    color: rgb(18, 15, 15);
+    background-color: rgb(118, 89, 89);
     position: absolute;
     left: 380px;
     top: 1250px;
     transition: cubic-bezier(50);
   }
   .btn:hover {
-    background-color:white;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
-  }
+    background-color:rgb(76, 163, 14);
+    box-shadow: 0 8px 12px rgba(207, 78, 78, 0.3);
+  } */
     
  .skill-section {
   background-color: #f9f9f9;
@@ -493,6 +493,7 @@ section .title::after{
   height: 100px;
   object-fit: contain;
   border-radius: 8px;
+  
 }
 
 .experience-details {
@@ -500,6 +501,24 @@ section .title::after{
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.achievements-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.achievements-items{
+  display: flex;
+  flex-wrap: wrap;
+  background: #baadad;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  width: 100%;
+  max-width: 800px;
+  gap: 20px;
 }
 
 footer {
@@ -522,7 +541,7 @@ footer .social-icons a {
 }
 
 footer .social-icons a:hover {
-  color: crimson;
+  color: rgb(50, 4, 220);
 }
 
 footer p {
